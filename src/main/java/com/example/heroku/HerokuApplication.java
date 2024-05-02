@@ -90,15 +90,40 @@ public class HerokuApplication {
   }
     
   public String getRandomString() {
-    String RANDOM = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-    StringBuilder random = new StringBuilder();
-    Random rn = new Random();
-    while (random.length() < 18) {
-      int index = (int) (rn.nextFloat() * RANDOM.length());
-      random.append(RANDOM.charAt(index));
-    }
-    String randomStr = random.toString();
-    return randomStr;
+
+
+      Random random = new Random();
+      StringBuilder stringBuilder = new StringBuilder();
+
+      // Loop to generate random letters
+      for (int i = 0; i < 10; i++) {
+        // Generate a random integer between 0 and 25 inclusive (for 26 letters)
+        int randomInt = random.nextInt(26);
+        // Convert the random integer to a letter by adding 'a'
+        char randomLetter = (char) ('a' + randomInt);
+        // Append the letter to the string
+        stringBuilder.append(randomLetter);
+       }
+    
+      // Return the generated random string
+      return stringBuilder.toString();
+
+
+    // String RANDOM = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    // StringBuilder random = new StringBuilder();
+    // Random rn = new Random();
+    // while (random.length() < 18) {
+    //   int index = (int) (rn.nextFloat() * RANDOM.length());
+    //   random.append(RANDOM.charAt(index));
+    // }
+    // String randomStr = random.toString();
+    // // System.out.println(randomStr);
+    // return randomStr;
+    // RandomStringGenerator generator = new RandomStringGenerator.Builder()
+    // .withinRange('0', 'z')
+    // .filteredBy(LETTERS, DIGITS)
+    // .build();
+    // return
   }
 
 }
